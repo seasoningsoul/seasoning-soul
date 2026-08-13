@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Seasoning Soul | Shirts</title>
+<style>
+  :root {
+    --charcoal: #1f1a17;
+    --cream: #faf3e8;
+    --rust: #c1541f;
+    --gold: #d9a441;
+    --olive: #5c5738;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Georgia', 'Times New Roman', serif;
+    background: var(--cream);
+    color: var(--charcoal);
+    line-height: 1.6;
+  }
+  header {
+    background: var(--charcoal);
+    color: var(--cream);
+    text-align: center;
+    padding: 60px 20px 50px;
+  }
+  header .tag {
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    font-size: 13px;
+    color: var(--gold);
+    margin-bottom: 14px;
+    font-family: Arial, sans-serif;
+  }
+  header h1 {
+    font-size: 48px;
+    letter-spacing: 1px;
+  }
+  header p.sub {
+    margin-top: 14px;
+    font-size: 17px;
+    color: #d8cfc0;
+    max-width: 480px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .divider {
+    width: 60px;
+    height: 3px;
+    background: var(--rust);
+    margin: 24px auto 0;
+  }
+  main {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 50px 20px 80px;
+  }
+  section {
+    margin-bottom: 48px;
+  }
+  h2 {
+    font-size: 24px;
+    color: var(--rust);
+    text-align: center;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+  .shirt-card {
+    background: #fff;
+    border: 1px solid #e6dcc8;
+    border-radius: 10px;
+    padding: 28px;
+    text-align: center;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+  }
+  .shirt-gallery {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    flex-wrap: wrap;
+    margin-bottom: 24px;
+  }
+  .shirt-photo {
+    flex: 1;
+    min-width: 200px;
+    max-width: 280px;
+  }
+  .shirt-photo img {
+    width: 100%;
+    height: auto;
+    background: #eef4f8;
+    border-radius: 8px;
+    display: block;
+  }
+  .shirt-photo .caption {
+    margin-top: 8px;
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--olive);
+  }
+  .price-row {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin: 20px 0 8px;
+    flex-wrap: wrap;
+  }
+  .price-box {
+    text-align: center;
+  }
+  .price-box .label {
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--olive);
+  }
+  .price-box .amount {
+    font-size: 32px;
+    color: var(--rust);
+    font-weight: bold;
+  }
+  .sizes {
+    margin-top: 28px;
+  }
+  .sizes .label {
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--olive);
+    margin-bottom: 12px;
+  }
+  .size-grid {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  .size-pill {
+    border: 1.5px solid var(--charcoal);
+    border-radius: 30px;
+    padding: 8px 18px;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+  }
+  .order-box {
+    background: #fff;
+    border: 1px solid #e6dcc8;
+    border-radius: 10px;
+    padding: 30px;
+  }
+  .order-box label {
+    display: block;
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--olive);
+    margin: 16px 0 6px;
+  }
+  .order-box label:first-child { margin-top: 0; }
+  .order-box select, .order-box input {
+    width: 100%;
+    padding: 12px;
+    font-size: 15px;
+    border: 1.5px solid #d8cfc0;
+    border-radius: 6px;
+    background: var(--cream);
+    font-family: Arial, sans-serif;
+  }
+  .qty-row {
+    display: flex;
+    gap: 16px;
+  }
+  .qty-row > div { flex: 1; }
+
+  .venmo-section {
+    background: var(--charcoal);
+    color: var(--cream);
+    border-radius: 10px;
+    padding: 34px 28px;
+    text-align: center;
+  }
+  .venmo-section h3 {
+    color: var(--gold);
+    font-size: 20px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+  }
+  .venmo-handle {
+    display: inline-block;
+    background: #3d94ce;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    font-size: 22px;
+    padding: 14px 28px;
+    border-radius: 40px;
+    margin: 16px 0;
+    letter-spacing: 0.5px;
+  }
+  .venmo-note {
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+    color: #cfc6b6;
+    max-width: 420px;
+    margin: 12px auto 0;
+  }
+  .edit-flag {
+    display: inline-block;
+    margin-top: 14px;
+    font-family: Arial, sans-serif;
+    font-size: 11px;
+    background: var(--rust);
+    color: #fff;
+    padding: 4px 10px;
+    border-radius: 4px;
+    letter-spacing: 0.5px;
+  }
+  .info-bar {
+    background: var(--gold);
+    color: var(--charcoal);
+    text-align: center;
+    padding: 12px 20px;
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+  }
+  footer {
+    text-align: center;
+    padding: 30px 20px;
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+    color: var(--olive);
+  }
+</style>
+</head>
+<body>
+
+<div class="info-bar">Shirts ship out weekly &middot; Currently available in Light Blue</div>
+<header>
+  <h1>Seasoning Soul</h1>
+  <p class="sub">"Let your speech always be with grace, seasoned with salt." — Colossians 4:6</p>
+  <div class="divider"></div>
+</header>
+
+<main>
+
+  <section>
+    <h2>The Shirt</h2>
+    <div class="shirt-card">
+      <div class="shirt-gallery">
+        <div class="shirt-photo">
+          <img src="shirt-back-1.png" alt="Seasoning Soul shirt front design">
+          <div class="caption">Front</div>
+        </div>
+        <div class="shirt-photo">
+          <img src="shirt-back-2.png" alt="Seasoning Soul shirt back design">
+          <div class="caption">Back</div>
+        </div>
+      </div>
+      <p style="font-family: Arial, sans-serif; color: var(--olive); font-size: 14px;">Soft cotton tee &middot; Seasoning Soul graphic &middot; Available in kids &amp; adult sizes</p>
+
+      <div class="price-row">
+        <div class="price-box">
+          <div class="label">Kids</div>
+          <div class="amount">$25</div>
+        </div>
+        <div class="price-box">
+          <div class="label">Adult</div>
+          <div class="amount">$30</div>
+        </div>
+      </div>
+
+      <div class="sizes">
+        <div class="label">Adult Sizes</div>
+        <div class="size-grid">
+          <div class="size-pill">Small</div>
+          <div class="size-pill">Medium</div>
+          <div class="size-pill">Large</div>
+          <div class="size-pill">X-Large</div>
+          <div class="size-pill">XX-Large</div>
+        </div>
+      </div>
+
+      <div class="sizes">
+        <div class="label">Kids Sizes</div>
+        <div class="size-grid">
+          <div class="size-pill">Small</div>
+          <div class="size-pill">Medium</div>
+          <div class="size-pill">Large</div>
+          <div class="size-pill">X-Large</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Place Your Order</h2>
+    <div class="order-box">
+      <label>Your Name</label>
+      <input type="text" placeholder="Full name">
+
+      <div class="qty-row">
+        <div>
+          <label>Fit</label>
+          <select>
+            <option>Adult</option>
+            <option>Kids</option>
+          </select>
+        </div>
+        <div>
+          <label>Size</label>
+          <select>
+            <option>Small</option>
+            <option>Medium</option>
+            <option>Large</option>
+            <option>X-Large</option>
+            <option>XX-Large</option>
+          </select>
+        </div>
+      </div>
+
+      <label>Quantity</label>
+      <input type="number" value="1" min="1">
+
+      <label>Notes (optional)</label>
+      <input type="text" placeholder="e.g. shipping address, color preference">
+    </div>
+  </section>
+
+  <section>
+    <div class="venmo-section">
+      <h3>Pay with Venmo</h3>
+      <div class="venmo-handle">@SeasoningSoul</div>
+      <p class="venmo-note">Send payment to the handle above with your name and order details in the note (e.g. "Jane Doe — 1 Adult Large"). Orders are confirmed once payment is received.</p>
+      <span class="edit-flag">Replace with your real Venmo @handle</span>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  &copy; 2026 Seasoning Soul.
+</footer>
+
+</body>
+</html>
