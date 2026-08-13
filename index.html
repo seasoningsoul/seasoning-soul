@@ -75,6 +75,33 @@
     text-align: center;
     box-shadow: 0 3px 10px rgba(0,0,0,0.05);
   }
+  .shirt-gallery {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    flex-wrap: wrap;
+    margin-bottom: 24px;
+  }
+  .shirt-photo {
+    flex: 1;
+    min-width: 200px;
+    max-width: 280px;
+  }
+  .shirt-photo img {
+    width: 100%;
+    height: auto;
+    background: #eef4f8;
+    border-radius: 8px;
+    display: block;
+  }
+  .shirt-photo .caption {
+    margin-top: 8px;
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--olive);
+  }
   .price-row {
     display: flex;
     justify-content: center;
@@ -197,6 +224,16 @@
     border-radius: 4px;
     letter-spacing: 0.5px;
   }
+  .info-bar {
+    background: var(--gold);
+    color: var(--charcoal);
+    text-align: center;
+    padding: 12px 20px;
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+  }
   footer {
     text-align: center;
     padding: 30px 20px;
@@ -208,8 +245,8 @@
 </head>
 <body>
 
+<div class="info-bar">Shirts ship out weekly &middot; Currently available in Light Blue</div>
 <header>
-  <div class="tag">Handmade &middot; Small Batch</div>
   <h1>Seasoning Soul</h1>
   <p class="sub">"Let your speech always be with grace, seasoned with salt." — Colossians 4:6</p>
   <div class="divider"></div>
@@ -220,6 +257,16 @@
   <section>
     <h2>The Shirt</h2>
     <div class="shirt-card">
+      <div class="shirt-gallery">
+        <div class="shirt-photo">
+          <img src="shirt-back-1.png" alt="Seasoning Soul shirt front design">
+          <div class="caption">Front</div>
+        </div>
+        <div class="shirt-photo">
+          <img src="shirt-back-2.png" alt="Seasoning Soul shirt back design">
+          <div class="caption">Back</div>
+        </div>
+      </div>
       <p style="font-family: Arial, sans-serif; color: var(--olive); font-size: 14px;">Soft cotton tee &middot; Seasoning Soul graphic &middot; Available in kids &amp; adult sizes</p>
 
       <div class="price-row">
@@ -302,7 +349,7 @@
 </main>
 
 <footer>
-  &copy; 2026 Seasoning Soul. All orders handmade to order.
+  &copy; 2026 Seasoning Soul.
 </footer>
 
 </body>
