@@ -189,6 +189,25 @@
     gap: 16px;
   }
   .qty-row > div { flex: 1; }
+  #order-submit {
+    display: block;
+    width: 100%;
+    margin-top: 24px;
+    padding: 14px;
+    background: var(--rust);
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    font-family: Arial, sans-serif;
+    font-size: 15px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+  }
+  #order-submit:hover {
+    background: #a3441a;
+  }
 
   .venmo-section {
     background: var(--charcoal);
@@ -307,19 +326,19 @@
     <h2>Place Your Order</h2>
     <div class="order-box">
       <label>Your Name</label>
-      <input type="text" placeholder="Full name">
+      <input type="text" id="order-name" placeholder="Full name">
 
       <div class="qty-row">
         <div>
           <label>Fit</label>
-          <select>
+          <select id="order-fit">
             <option>Adult</option>
             <option>Kids</option>
           </select>
         </div>
         <div>
           <label>Size</label>
-          <select>
+          <select id="order-size">
             <option>Small</option>
             <option>Medium</option>
             <option>Large</option>
@@ -330,12 +349,36 @@
       </div>
 
       <label>Quantity</label>
-      <input type="number" value="1" min="1">
+      <input type="number" id="order-qty" value="1" min="1">
 
       <label>Notes (optional)</label>
-      <input type="text" placeholder="e.g. shipping address, color preference">
+      <input type="text" id="order-notes" placeholder="e.g. shipping address, color preference">
+
+      <button type="button" id="order-submit" onclick="submitOrder()">Submit Order</button>
     </div>
   </section>
+
+  <script>
+    function submitOrder() {
+      var name = document.getElementById('order-name').value || 'Not provided';
+      var fit = document.getElementById('order-fit').value;
+      var size = document.getElementById('order-size').value;
+      var qty = document.getElementById('order-qty').value || '1';
+      var notes = document.getElementById('order-notes').value || 'None';
+
+      var subject = 'Seasoning Soul Order - ' + name;
+      var body =
+        'New order from the Seasoning Soul website:\n\n' +
+        'Name: ' + name + '\n' +
+        'Fit: ' + fit + '\n' +
+        'Size: ' + size + '\n' +
+        'Quantity: ' + qty + '\n' +
+        'Notes: ' + notes;
+
+      var mailto = 'mailto:earltwigg@gmail.com?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+      window.location.href = mailto;
+    }
+  </script>
 
   <section>
     <div class="venmo-section">
